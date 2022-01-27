@@ -57,3 +57,12 @@ Uso desde un Web API de NET Core 3.1
       }
     }
         
+        
+Reporteador tomado de https://opensource.com/article/21/10/disagreement-open-source utilizado para diseñar formatos WYSIWYG e imprimir en pdf desde score.
+
+Reportman designer utiliza .Net Framework 4.6.1
+
+En Score se utiliza dentro de HemoecoAPI que utiliza .Net Core 3.1, las bibliotecas requeridas se adaptaron para tal fin.
+
+Se utiliza Visual Studio 2019 y 2022 como IDE para estos proyectos.
+
