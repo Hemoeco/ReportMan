@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;REPMAN_ZLIB</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;REPMAN_ZLIB</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;NETSTANDARD2_0;REPMAN_ZLIB</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Reportman.Drawing\AssemblyResolver.cs" Link="AssemblyResolver.cs" />
+    <Compile Include="..\..\Reportman.Drawing\BitmapUtil.cs" Link="BitmapUtil.cs" />
+    <Compile Include="..\..\Reportman.Drawing\Collections.cs" Link="Collections.cs" />
+    <Compile Include="..\..\Reportman.Drawing\DataUtilities.cs" Link="DataUtilities.cs" />
+    <Compile Include="..\..\Reportman.Drawing\DateUtil.cs" Link="DateUtil.cs" />
+    <Compile Include="..\..\Reportman.Drawing\DbSqlExecuter.cs" Link="DbSqlExecuter.cs" />
+    <Compile Include="..\..\Reportman.Drawing\DoubleUtil.cs" Link="DoubleUtil.cs" />
+    <Compile Include="..\..\Reportman.Drawing\Encrypter.cs" Link="Encrypter.cs" />
+    <Compile Include="..\..\Reportman.Drawing\ExceptionUtil.cs" Link="ExceptionUtil.cs" />
+    <Compile Include="..\..\Reportman.Drawing\FastSerializer.cs" Link="FastSerializer.cs" />
+    <Compile Include="..\..\Reportman.Drawing\FontInfoProvider.cs" Link="FontInfoProvider.cs" />
+    <Compile Include="..\..\Reportman.Drawing\GraphicUtilsStandard.cs" Link="GraphicUtilsStandard.cs" />
+    <Compile Include="..\..\Reportman.Drawing\GS1_128.cs" Link="GS1_128.cs" />
+    <Compile Include="..\..\Reportman.Drawing\IniFile.cs" Link="IniFile.cs" />
+    <Compile Include="..\..\Reportman.Drawing\ISqlExecuter.cs" Link="ISqlExecuter.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaFile.cs" Link="MetaFile.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaObject.cs" Link="MetaObject.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaObjectDraw.cs" Link="MetaObjectDraw.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaObjectExport.cs" Link="MetaObjectExport.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaObjectImage.cs" Link="MetaObjectImage.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaObjectPolygon.cs" Link="MetaObjectPolygon.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaObjectText.cs" Link="MetaObjectText.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaPage.cs" Link="MetaPage.cs" />
+    <Compile Include="..\..\Reportman.Drawing\MetaStream.cs" Link="MetaStream.cs" />
+    <Compile Include="..\..\Reportman.Drawing\NamedException.cs" Link="NamedException.cs" />
+    <Compile Include="..\..\Reportman.Drawing\NoDataToPrintException.cs" Link="NoDataToPrintException.cs" />
+    <Compile Include="..\..\Reportman.Drawing\ObjectViewModel.cs" Link="ObjectViewModel.cs" />
+    <Compile Include="..\..\Reportman.Drawing\PDFCanvas.cs" Link="PDFCanvas.cs" />
+    <Compile Include="..\..\Reportman.Drawing\PrinterConfig.cs" Link="PrinterConfig.cs" />
+    <Compile Include="..\..\Reportman.Drawing\PrintOut.cs" Link="PrintOut.cs" />
+    <Compile Include="..\..\Reportman.Drawing\PrintOutCSV.cs" Link="PrintOutCSV.cs" />
+    <Compile Include="..\..\Reportman.Drawing\PrintOutPDF.cs" Link="PrintOutPDF.cs" />
+    <Compile Include="..\..\Reportman.Drawing\PrintOutText.cs" Link="PrintOutText.cs" />
+    <Compile Include="..\..\Reportman.Drawing\ProcessUtil.cs" Link="ProcessUtil.cs" />
+    <Compile Include="..\..\Reportman.Drawing\ProgressArgs.cs" Link="ProgressArgs.cs" />
+    <Compile Include="..\..\Reportman.Drawing\resource.Designer.cs" Link="resource.Designer.cs" />
+    <Compile Include="..\..\Reportman.Drawing\Series.cs" Link="Series.cs" />
+    <Compile Include="..\..\Reportman.Drawing\StreamUtil.cs" Link="StreamUtil.cs" />
+    <Compile Include="..\..\Reportman.Drawing\StringExtensions.cs" Link="StringExtensions.cs" />
+    <Compile Include="..\..\Reportman.Drawing\Strings.cs" Link="Strings.cs" />
+    <Compile Include="..\..\Reportman.Drawing\StringUtil.cs" Link="StringUtil.cs" />
+    <Compile Include="..\..\Reportman.Drawing\TextObjectStruct.cs" Link="TextObjectStruct.cs" />
+    <Compile Include="..\..\Reportman.Drawing\Translator.cs" Link="Translator.cs" />
+    <Compile Include="..\..\Reportman.Drawing\TrueType.cs" Link="TrueType.cs" />
+    <Compile Include="..\..\Reportman.Drawing\Twips.cs" Link="Twips.cs" />
+    <Compile Include="..\..\Reportman.Drawing\Units.cs" Link="Units.cs" />
+    <Compile Include="..\..\Reportman.Drawing\UnNamedException.cs" Link="UnNamedException.cs" />
+    <Compile Include="..\..\Reportman.Drawing\Updater.cs" Link="Updater.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Reportman.Drawing\resource.resx" Link="resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Reportman.Drawing\Translator.resx" Link="Translator.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenRA-Freetype6" Version="1.0.4" />
+    <PackageReference Include="SharpFont" Version="4.0.1" />
+    <PackageReference Include="SharpFontStandard" Version="4.0.1" />
+    <PackageReference Include="SharpZipLib" Version="1.3.1" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>

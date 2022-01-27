@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80EF8FAE-B1D8-4D1B-817F-6C0DB3689FAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reportman.Designer</RootNamespace>
+    <AssemblyName>Reportman.Designer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesignerInteraceText.cs" />
+    <Compile Include="DesignerInterfaceDataInfo.cs" />
+    <Compile Include="DesignerInterfaceImage.cs" />
+    <Compile Include="DesignerInterfaceParam.cs" />
+    <Compile Include="DesignerInterfaceSize.cs" />
+    <Compile Include="DesignerInterfaceSizePos.cs" />
+    <Compile Include="DesignerInterfaceSubReport.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Inspector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IObjectInspector.cs" />
+    <Compile Include="LibraryConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LibraryConfig.Designer.cs">
+      <DependentUpon>LibraryConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryConfigForm.Designer.cs">
+      <DependentUpon>LibraryConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenFromLibrary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OpenFromLibrary.designer.cs">
+      <DependentUpon>OpenFromLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenFromLibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenFromLibraryForm.Designer.cs">
+      <DependentUpon>OpenFromLibraryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DesignerInterfaceBarcode.cs" />
+    <Compile Include="DesignerInterfaceChart.cs" />
+    <Compile Include="DesignerInterfaceExpression.cs" />
+    <Compile Include="DesignerInterfaceLabel.cs" />
+    <Compile Include="DesignerInterface.cs" />
+    <Compile Include="ObjectInspector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectInspector.designer.cs">
+      <DependentUpon>ObjectInspector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSubReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditSubReport.designer.cs">
+      <DependentUpon>EditSubReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridOptions.designer.cs">
+      <DependentUpon>GridOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrameFields.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrameFields.designer.cs">
+      <DependentUpon>FrameFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExpressionDlg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExpressionDlg.designer.cs">
+      <DependentUpon>ExpressionDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConnectionEditor.designer.cs">
+      <DependentUpon>ConnectionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrameStructure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrameStructure.designer.cs">
+      <DependentUpon>FrameStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrameDataDef.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrameDataDef.designer.cs">
+      <DependentUpon>FrameDataDef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EllipsisEditingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EllipsisEditingControl.designer.cs">
+      <DependentUpon>EllipsisEditingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignerInterfaceDbInfo.cs" />
+    <Compile Include="DesignerInterfaceShape.cs" />
+    <Compile Include="DesignerInterfaceSection.cs" />
+    <Compile Include="FrameMainDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrameMainDesigner.designer.cs">
+      <DependentUpon>FrameMainDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyFrame.designer.cs">
+      <DependentUpon>PropertyFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectInspectorColumn.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RuntimeResize.cs" />
+    <Compile Include="SQLEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SQLEditor.designer.cs">
+      <DependentUpon>SQLEditor.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reportman.Drawing.Forms\Reportman.Drawing.Forms.csproj">
+      <Project>{6d3460ef-e85e-42ed-a2db-6c800eed53fc}</Project>
+      <Name>Reportman.Drawing.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reportman.Drawing\Reportman.Drawing.csproj">
+      <Project>{dc4decfd-7439-440c-936e-b464e5269166}</Project>
+      <Name>Reportman.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reportman.Reporting.Forms\Reportman.Reporting.Forms.csproj">
+      <Project>{a3ee9d0f-a4dd-44ce-a33b-6354b23dffee}</Project>
+      <Name>Reportman.Reporting.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reportman.Reporting\Reportman.Reporting.csproj">
+      <Project>{f54dec26-406a-448f-a8d1-22203eff613c}</Project>
+      <Name>Reportman.Reporting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LibraryConfig.resx">
+      <DependentUpon>LibraryConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryConfigForm.resx">
+      <DependentUpon>LibraryConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenFromLibrary.resx">
+      <DependentUpon>OpenFromLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenFromLibraryForm.resx">
+      <DependentUpon>OpenFromLibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSubReport.resx">
+      <DependentUpon>EditSubReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridOptions.resx">
+      <DependentUpon>GridOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameFields.resx">
+      <DependentUpon>FrameFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpressionDlg.resx">
+      <DependentUpon>ExpressionDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionEditor.resx">
+      <DependentUpon>ConnectionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameStructure.resx">
+      <DependentUpon>FrameStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameDataDef.resx">
+      <DependentUpon>FrameDataDef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EllipsisEditingControl.resx">
+      <DependentUpon>EllipsisEditingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameMainDesigner.resx">
+      <DependentUpon>FrameMainDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyFrame.resx">
+      <DependentUpon>PropertyFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLEditor.resx">
+      <DependentUpon>SQLEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Reportman.Reporting.ReportLibraryConfigCollection.datasource" />
+    <None Include="Resources\aaddreport.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfolder.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addprops.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignbottom.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignhdistance.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignleft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignright.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aligntop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignvdistance.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draw.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\execute.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export_subreport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exportar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hideright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import_subreport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\label.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newdocument.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagesetup.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prismatico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom2.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

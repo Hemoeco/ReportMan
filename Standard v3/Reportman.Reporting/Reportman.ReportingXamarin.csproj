@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;NODRAWING;REPMAN_ZLIB;OMIT_ZXING</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;NODRAWING;REPMAN_ZLIB;OMIT_ZXING</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;NETSTANDARD2_0;NODRAWING;REPMAN_ZLIB;OMIT_ZXING</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <DefineConstants>TRACE;NETSTANDARD2_0;NODRAWING;REPMAN_ZLIB;OMIT_ZXING</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Reportman.Reporting\BarcodeItem.cs" Link="BarcodeItem.cs" />
+    <Compile Include="..\..\Reportman.Reporting\BaseReport.cs" Link="BaseReport.cs" />
+    <Compile Include="..\..\Reportman.Reporting\ChartItem.cs" Link="ChartItem.cs" />
+    <Compile Include="..\..\Reportman.Reporting\DatabaseInfo.cs" Link="DatabaseInfo.cs" />
+    <Compile Include="..\..\Reportman.Reporting\DatabaseInfos.cs" Link="DatabaseInfos.cs" />
+    <Compile Include="..\..\Reportman.Reporting\DataInfo.cs" Link="DataInfo.cs" />
+    <Compile Include="..\..\Reportman.Reporting\DataInfos.cs" Link="DataInfos.cs" />
+    <Compile Include="..\..\Reportman.Reporting\DatasetAlias.cs" Link="DatasetAlias.cs" />
+    <Compile Include="..\..\Reportman.Reporting\EvalException.cs" Link="EvalException.cs" />
+    <Compile Include="..\..\Reportman.Reporting\EvalFunctions.cs" Link="EvalFunctions.cs" />
+    <Compile Include="..\..\Reportman.Reporting\EvalIdentifier.cs" Link="EvalIdentifier.cs" />
+    <Compile Include="..\..\Reportman.Reporting\EvalIdentifiers.cs" Link="EvalIdentifiers.cs" />
+    <Compile Include="..\..\Reportman.Reporting\EvalParser.cs" Link="EvalParser.cs" />
+    <Compile Include="..\..\Reportman.Reporting\Evaluator.cs" Link="Evaluator.cs" />
+    <Compile Include="..\..\Reportman.Reporting\ExpressionItem.cs" Link="ExpressionItem.cs" />
+    <Compile Include="..\..\Reportman.Reporting\ExternalReport.cs" Link="ExternalReport.cs" />
+    <Compile Include="..\..\Reportman.Reporting\IdenBoolean.cs" Link="IdenBoolean.cs" />
+    <Compile Include="..\..\Reportman.Reporting\IdenConstant.cs" Link="IdenConstant.cs" />
+    <Compile Include="..\..\Reportman.Reporting\IdenField.cs" Link="IdenField.cs" />
+    <Compile Include="..\..\Reportman.Reporting\IdenFunction.cs" Link="IdenFunction.cs" />
+    <Compile Include="..\..\Reportman.Reporting\IdenVariable.cs" Link="IdenVariable.cs" />
+    <Compile Include="..\..\Reportman.Reporting\IdenVariableParam.cs" Link="IdenVariableParam.cs" />
+    <Compile Include="..\..\Reportman.Reporting\ImageItem.cs" Link="ImageItem.cs" />
+    <Compile Include="..\..\Reportman.Reporting\LabelItem.cs" Link="LabelItem.cs" />
+    <Compile Include="..\..\Reportman.Reporting\PagedDataTable.cs" Link="PagedDataTable.cs" />
+    <Compile Include="..\..\Reportman.Reporting\Param.cs" Link="Param.cs" />
+    <Compile Include="..\..\Reportman.Reporting\Params.cs" Link="Params.cs" />
+    <Compile Include="..\..\Reportman.Reporting\Report.cs" Link="Report.cs" />
+    <Compile Include="..\..\Reportman.Reporting\ReportDataset.cs" Link="ReportDataset.cs" />
+    <Compile Include="..\..\Reportman.Reporting\ReportItem.cs" Link="ReportItem.cs" />
+    <Compile Include="..\..\Reportman.Reporting\ReportReader.cs" Link="ReportReader.cs" />
+    <Compile Include="..\..\Reportman.Reporting\Section.cs" Link="Section.cs" />
+    <Compile Include="..\..\Reportman.Reporting\ShapeItem.cs" Link="ShapeItem.cs" />
+    <Compile Include="..\..\Reportman.Reporting\Subreport.cs" Link="Subreport.cs" />
+    <Compile Include="..\..\Reportman.Reporting\TokenType.cs" Link="TokenType.cs" />
+    <Compile Include="..\..\Reportman.Reporting\VariableGraph.cs" Link="VariableGraph.cs" />
+    <Compile Include="..\..\Reportman.Reporting\Variant.cs" Link="Variant.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Reportman.Drawing\Reportman.Drawing.csproj" />
+  </ItemGroup>
+
+</Project>

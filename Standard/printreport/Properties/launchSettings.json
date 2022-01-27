@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "printreport": {
+      "commandName": "Project",
+      "commandLineArgs": "-pdf \"c:\\datos\\qrtest2.pdf\" \"c:\\datos\\qrtest2.rep\""
+    }
+  }
+}

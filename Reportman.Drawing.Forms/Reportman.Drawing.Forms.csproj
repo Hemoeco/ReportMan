@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D3460EF-E85E-42ED-A2DB-6C800EED53FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reportman.Drawing.Forms</RootNamespace>
+    <AssemblyName>Reportman.Drawing.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.94.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\nugetPackages\ClosedXML.0.94.2\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.14.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\..\nugetPackages\DocumentFormat.OpenXml.2.14.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\..\..\nugetPackages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\nugetPackages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CueHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ProgressBarAdvanced.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ButtonAdvanced.cs" />
+    <Compile Include="ComboBoxAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViewAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViewColumnAdvanced.cs" />
+    <Compile Include="DateTimePickerNullable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DateTimePickerAdvanced.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateTimePickerAdvanced.designer.cs">
+      <DependentUpon>DateTimePickerAdvanced.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridViewNumericUpDownCell.cs" />
+    <Compile Include="DataProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataProgress.designer.cs">
+      <DependentUpon>DataProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBoxAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBoxAdvanced.designer.cs">
+      <DependentUpon>GroupBoxAdvanced.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBox.designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageAPI.cs" />
+    <Compile Include="MessageBoxError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoTitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoTitleForm.designer.cs">
+      <DependentUpon>NoTitleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewMetaFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PreviewWinFormsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PreviewWinFormsControl.designer.cs">
+      <DependentUpon>PreviewWinFormsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintersConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintersConfiguration.designer.cs">
+      <DependentUpon>PrintersConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RadioGroup.designer.cs">
+      <DependentUpon>RadioGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RawPrinterHelper.cs" />
+    <Compile Include="PrintOutWinForms.cs" />
+    <Compile Include="ReportProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableLayoutAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TransformImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransformImageForm.Designer.cs">
+      <DependentUpon>TransformImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm.designer.cs">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeGridAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolTipAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabPageAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControlAdvanced.cs" />
+    <Compile Include="TabControlAdvanced.designer.cs">
+      <DependentUpon>TabControlAdvanced.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignatureControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SignatureControl.designer.cs">
+      <DependentUpon>SignatureControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenKeyboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenKeyboard.designer.cs">
+      <DependentUpon>ScreenKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ruler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxAdvanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsGraphics.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProgressBarAdvanced.resx">
+      <DependentUpon>ProgressBarAdvanced.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateTimePickerAdvanced.resx">
+      <DependentUpon>DateTimePickerAdvanced.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataProgress.resx">
+      <DependentUpon>DataProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxError.resx">
+      <DependentUpon>MessageBoxError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewMetaFile.resx">
+      <DependentUpon>PreviewMetaFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewWinFormsControl.resx">
+      <DependentUpon>PreviewWinFormsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintersConfiguration.resx">
+      <DependentUpon>PrintersConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportProgressForm.resx">
+      <DependentUpon>ReportProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransformImageForm.resx">
+      <DependentUpon>TransformImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm.resx">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignatureControl.resx">
+      <DependentUpon>SignatureControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenKeyboard.resx">
+      <DependentUpon>ScreenKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Resources\cerrar_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar_19_blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dropdown_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_finish.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_2_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\progress_wheel.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurar_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right_4_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reportman.Drawing\Reportman.Drawing.csproj">
+      <Project>{dc4decfd-7439-440c-936e-b464e5269166}</Project>
+      <Name>Reportman.Drawing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

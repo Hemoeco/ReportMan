@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "printreport": {
+      "commandName": "Project",
+      "commandLineArgs": "-pdf \"c:\\dades\\test5.pdf\" \"c:\\dades\\test2.rep\""
+    }
+  }
+}
