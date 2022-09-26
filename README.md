@@ -66,3 +66,5 @@ En Score se utiliza dentro de HemoecoAPI que utiliza .Net Core 3.1, las bibliote
 
 Se utiliza Visual Studio 2019 y 2022 como IDE para estos proyectos.
 
+Se recopila un poo de información en cuanto a nuestra experiencia con reportman en el documento 'Impresión de documentos pdf' (https://docs.google.com/document/d/1R3f3Rc-Dd38Su0PhVQCt8prwvU6BCZuLJXUIKCROHik/edit#heading=h.94yreql7w12j)
+
