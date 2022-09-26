@@ -20,44 +20,105 @@ Uso desde un Web API de NET Core 3.1
     [ApiController]
     public class PdfController : ControllerBase
     {
-        [HttpGet]
-        [Route("ot/{idOT}")]
-        public async Task<ActionResult> OT(string idOT)
+    ...
+        private async Task<ActionResult> GenerarPdf(string pdfDestinoSinExt, string repOrigen, ConfigurarParametros configParams)
         {
-            Report rp = new Report();
-            rp.LoadFromFile("C:\\Users\\cesar\\source\\repos\\SCORE\\HemoecoAPI\\ot-net.rep");
-            rp.ConvertToDotNet();
-            // FixReport
-            rp.AsyncExecution = false;
-            PrintOutPDF printpdf = new PrintOutPDF();
+            // SCOREEntitiesHelper.WriteToLog($"Llamada a GenerarPdf({pdfDestino}, {repOrigen}, ...)");
+            // return new JsonResult($"log: {SCOREEntitiesHelper.LogPath}");
 
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            try
+            {
+                // SCOREEntitiesHelper.WriteToLog($"new ReporteHemoeco", false);
 
-            // Perform the conversion from one encoding to the other.
+                ReporteHemoeco rp = new ReporteHemoeco(repOrigen, ref pdfDestinoSinExt, _config);
+
+                // Configurar los parámetros requeridos (delegate)
+                if (configParams != null)
+                {
+                    configParams(rp);
+                }
+
+                // SCOREEntitiesHelper.WriteToLog($"Imprimir pdf", false);
+                if (rp.ImprimirPdf())
+                {
+                    return await EnviarArchivoRespuesta(pdfDestinoSinExt);
+                }
+            }
+            catch (Exception ex)
+            {
+                // todo: Regresar archivo con falla indicada
+                return new JsonResult(ex.Message);
+            }
+
+            // Si 'rp.ImprimirPdf()' regresa false, sin excepción, puede ser que el reporte esté configurado para imprimir sólo cuando hay datos.
+            // Esto se puede revisar en report designer, en la configuración del subreporte, donde se configura la conexión de datos principal
+            const string ERR_DESCONOCIDO = "Error al generar el pdf. Por favor revise la bitacora.";
+            string err = ERR_DESCONOCIDO;
+            SCOREEntitiesHelper.WriteToLog(ERR_DESCONOCIDO);
+            if (_config.DebugExtendido)
+            {
+                err += $" Ubicación del log: {SCOREEntitiesHelper.LogPath}";
+
+                SCOREEntitiesHelper.WriteToLog("Este escenario puede suceder si el reporte activa la opción 'Imprimir sólo si hay datos diponibles' y no hay datos.", false);
+            }
+            return new JsonResult(err);
+        }    
+        
+        delegate void ConfigurarParametros(ReporteHemoeco rp);
+        
+        private void ConfigurarNumOT(ReporteHemoeco rp)
+        {
+            // Asignar el numero de OT al reporte.
             if (rp.Params.Count > 0)
             {
-                // No funciona el Unicode
-                string titulo = $"Orden de trabajo {idOT}"; ; // "你好"; // $"Orden de trabajo {idOT}";
-                byte[] unicodeBytes = Encoding.Convert(Encoding.ASCII, Encoding.UTF8, Encoding.ASCII.GetBytes(titulo));
-                rp.Params[0].Value = Encoding.UTF8.GetString(unicodeBytes);
+                // SCOREEntitiesHelper.WriteToLog($"asignar parametros");
+                // NUM_OT es un parametro tipo entero en el reporte OT
+                rp.Params["NUM_OT"].Value = _idOT;
             }
-            printpdf.FileName = $"ot-{idOT}.pdf";
-            printpdf.Compressed = false;
-            
-            if (printpdf.Print(rp.MetaFile))
-            {
-                // Download Files using Web API. Changhui Xu. https://codeburst.io/download-files-using-web-api-ae1d1025f0a9
-                var bytes = await System.IO.File.ReadAllBytesAsync(printpdf.FileName);
-                return File(bytes, "application/pdf", printpdf.FileName);
-            }
-
-            // todo: Regresar archivo con falla indicada
-            return null;
         }
-      }
+        
     }
-        
-        
+
+Clase personalizada de 'Report':
+
+        // Specialized class derived from reportman's 'Report'
+        ...
+        public class ReporteHemoeco : Report
+        {
+        ...
+        internal PrintOutPDF PrintPdf
+        {
+            get
+            {
+                if (_printPdf == null)
+                {
+                    _printPdf = new PrintOutPDF();
+                }
+
+                return _printPdf;
+            }
+        }
+
+        private PrintOutPDF _printPdf = null;
+        ...
+        internal bool ImprimirPdf()
+        {
+            try
+            {
+                PrintPdf.FileName = _nombrePdf;
+                PrintPdf.Compressed = true;
+
+                return PrintPdf.Print(MetaFile);
+            }
+            catch (Exception ex)
+            {
+                SCOREEntitiesHelper.WriteToLog(ex);
+                return false;
+            }
+        }
+            
+        }
+                 
 Reporteador tomado de https://opensource.com/article/21/10/disagreement-open-source utilizado para diseñar formatos WYSIWYG e imprimir en pdf desde score.
 
 Reportman designer utiliza .Net Framework 4.6.1
@@ -68,3 +129,5 @@ Se utiliza Visual Studio 2019 y 2022 como IDE para estos proyectos.
 
 Se recopila un poo de información en cuanto a nuestra experiencia con reportman en el documento 'Impresión de documentos pdf' (https://docs.google.com/document/d/1R3f3Rc-Dd38Su0PhVQCt8prwvU6BCZuLJXUIKCROHik/edit#heading=h.94yreql7w12j)
 
+
+        
